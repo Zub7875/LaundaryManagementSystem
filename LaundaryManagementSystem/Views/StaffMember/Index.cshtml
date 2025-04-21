@@ -1,0 +1,593 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+        #tblbody {
+            background-color: cadetblue;
+            text-align: center;
+            border-style: solid;
+        }
+
+        #Bd {
+            background-color: lightblue;
+            border-style: solid;
+        }
+
+        #Bs {
+            font-size: 30px;
+            text-align: center;
+            text-decoration-line: underline;
+        }
+
+        #AD {
+            font-size: 25px;
+            text-align: center;
+            text-decoration-line: underline;
+        }
+
+        #Insert {
+            background-color: #f92424;
+            border: double;
+            color: white;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        #Update {
+            background-color: #00ff21;
+            border: double;
+            color: black;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        #Clear {
+            background-color: #000000;
+            border: double;
+            color: white;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: dashed;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        #LMS {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #LDT {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        #StaffForm {
+            background-color: #f92424;
+            border: double;
+            color: white;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="//cdn.datatables.net/autofill/2.5.1/js/dataTables.autoFill.min.js"></script>
+    <link rel="//cdn.datatables.net/autofill/2.5.1/css/autoFill.dataTables.min.css">
+
+    <title>BankPage</title>
+</head>
+<body id="Bd">
+    <div class="wrapper rounded bg-white">
+        <div class="container">
+            <div id="LMS" class="h3">**STAFF QUARTER DATA**</div>
+
+            <br />
+            <div class="form">
+                <div class="row">
+                    <div class="col-md-2 mt-md-0 mt-3">
+                        <label>Member Name</label>
+                        <input id="MEN" type="text" class="form-control" required>
+                    </div>
+                    <br />
+
+                    <div class="col-md-2 mt-md-0 mt-3">
+                        <label>Room No</label>
+                        <input id="RON" type="text" class="form-control" required>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>Date</label>
+
+                        <input id="SD" type="date" class="form-control" required>
+
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-2 mt-md-0 mt-3">
+                        <label>Number Of Clothes</label>
+                        <input id="NOC" type="text" class="form-control" required>
+                    </div>
+                    <br />
+                    <div class="col-md-2 mt-md-0 mt-3">
+                        <label>Mobile Number</label>
+                        <input id="MONU" type="text" class="form-control" required>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Types Of Clothes</label>
+                            <select id="TOC" required>
+                                <option value="" selected hidden>Choose Option</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class=" my-md-2 my-3">
+                            <label>Rate</label>
+                            <input id="RT" type="text" class="form-control" required>
+
+                        </div>
+                    </div>
+                    </br>
+                    <div class="row">
+                        <div class="my-md-2 my-3">
+                            <label>Total Amount</label>
+                            <input id="TOAM" type="text" class="form-control" required>
+
+
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-2 mt-md-0 mt-3">
+                            <label>Operation</label>
+                            <select id="OPN" required>
+                                <option value="" selected hidden>Choose Option</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Staff Quarter Status</label>
+                            <select id="SQS" required>
+                                <option value="" selected hidden>Choose Option</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class=" my-md-2 my-3">
+                            <label>Gender</label>
+                            <input type="radio" id="rdbmale" name="Gender" value="male" />Male
+                            <input type="radio" id="rdbfemale" name="Gender" value="Female" />Female
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6 mt-md-0 mt-3">
+                            <label>Active</label>
+                            <input type="checkbox" name="ChkPc" value="Yes">Yes
+                            <input type="checkbox" name="ChkPc" value="No">No
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+            <br />
+
+            <input type="button" id="Insert" value="Add" onclick="ValidateStudent()">
+            <input type="button" id="Update" value="Update" onclick="UpdateStudents()">
+            <input type="button" id="Clear" value="Clear" onclick="ClearData()" />
+            @*<input type="button" id="StaffForm" value="Staff Form" onclick="ClearData()" />*@
+            @*</div>*@
+
+
+
+
+
+
+            <div class="col-md-6 table-condensed">
+                <h3 id="LDT" style="color:black">LAUNDARY DETAILS</h3>
+                <table style="width:100%" border: 1px solid black; class="compact table table-bordered table-striped">
+                    <thead>
+                        <tr class="text-lg-end">
+                            <th>Sr No</th>
+
+                            <th>Member Name</th>
+                            <th>Room No</th>
+                            <th>Date</th>
+                            <th>No Of Clothes</th>
+                            <th>Mobile Number</th>
+                            <th>Type Of Clothes</th>
+                            <th>Rate</th>
+                            <th>TotalAmount</th>
+                            <th>Operation</th>
+                            <th>StaffQuarterStatus</th>
+                            <th>Gender</th>
+                            <th>Active</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="tblbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    $(document).ready(function () {
+        debugger;
+        TypesOfClothsList();
+        TypesOfOperation();
+
+    });
+    function ValidateStudent() {
+        debugger;
+        var StudentName = $("#SN").val();
+        var RoomNo = $("#RON").val();
+        var SubmissionDate = $("#SD").val();
+        var NoOfClothes = $("#NOC").val();
+        var TypeOfClothes = $("#TOC").val();
+        var Rate = $("#RT").val();
+        var TotalAmount = $("#TOAM").val();
+        var Operation = $("#OPN").val();
+
+        if (StudentName == "") {
+            alert("Please Enter Student Name");
+            return;
+        }
+        else if (RoomNo == "") {
+            alert("Please Enter Room No");
+            return;
+        }
+        else if (SubmissionDate == "") {
+            alert("Please Enter Submission Date");
+            return;
+        }
+        else if (NoOfClothes == "") {
+            alert("Please Enter No Of Clothes");
+            return;
+        }
+        else if (TypeOfClothes == "") {
+            alert("Please Enter Type Of Clothes");
+            return;
+        }
+        else if (Rate == "") {
+            alert("Please Enter Rate");
+            return;
+        }
+        else if (TotalAmount == "") {
+            alert("Please Enter Total Amount");
+            return;
+        }
+        else if (Operation == "") {
+            alert("Please Enter Operation");
+            return;
+        }
+
+
+
+        var Values =
+        {
+            StudentName: StudentName,
+            RoomNo: RoomNo,
+            SubmissionDate: SubmissionDate,
+            NoOfClothes: NoOfClothes,
+            TypeOfClothes: TypeOfClothes,
+            Rate: Rate,
+            TotalAmount: TotalAmount,
+            Operation: Operation
+        }
+
+
+        $.ajax({
+            type: "post",
+            url: "/NMIMS/InsertStudent",
+            dataType: "json",
+            data: { model: Values },
+            success: function (result) {
+
+                if (result != "") {
+                    if (result == "Success") {
+                        alert("Data Entered Sucessfully");
+                    }
+
+                }
+                else {
+                    alert("Something went wrong Please contact administrator.")
+                }
+            }
+
+        });
+
+
+    }
+</script>
+
+<script>
+    function TypesOfClothsList() {
+        $.ajax({
+            type: "post",
+            url: "/NMIMS/TblTypesOfClothes",
+            dataType: "json",
+            success: function (result) {
+
+                var data = JSON.parse(result);
+
+                $.each(
+                    data, function (i, item) {
+                        $("#TOC").append('<option value=' + item.TypesOfClothes + '>' + item.TypesOfClothes + '</option>')
+
+                    });
+
+
+            }
+
+        })
+    }
+</script>
+<script>
+    function TypesOfOperation() {
+        $.ajax({
+            type: "post",
+            url: "/NMIMS/TblOperation",
+            dataType: "json",
+            success: function (result) {
+
+                var data = JSON.parse(result);
+
+                $.each(
+                    data, function (i, item) {
+                        $("#OPN").append('<option value=' + item.Operation + '>' + item.Operation + '</option>')
+
+                    });
+
+
+            }
+
+        })
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+        Grid()
+    })
+    function Grid() {
+        debugger;
+        $.ajax({
+            type: "get",
+            url: "/NMIMS/GridView",
+            dataType: "json",
+            success: function (result) {
+                debugger;
+                var data = JSON.parse(result);
+                $("#tblbody").empty();
+                var count = 1;
+                $.each(data, function (i, item) {
+                    /* sessionStorage.setItem("Id", item.Id);*/
+                    $("#tblbody").append("<tr><td>" + count++ +
+                        "</td><td>" + item.StudentName +
+                        "</td><td>" + item.RoomNo +
+                        "</td><td>" + item.SubmissionDate +
+                        "</td><td>" + item.NoOfClothes +
+                        "</td><td>" + item.TypeOfClothes +
+                        "</td><td>" + item.Rate +
+                        "</td><td>" + item.TotalAmount +
+                        "</td><td>" + item.Operation +
+
+                        "</td><td> <a href='#' onclick='Edit(" + item.ID + ")'>Edit</a>" +
+                        "<a href='#' onclick='del(" + item.ID + ")'>Delete</a>" +
+                        "</td > </tr>");
+                });
+            }
+        })
+    }
+</script>
+
+<script>
+    function ClearData() {
+        debugger;
+        $("#SN").val("");
+        $("#RON").val("");
+        $("#SD").val("");
+        $("#NOC").val("");
+        $("#TOC").val("");
+        $("#RT").val("");
+        $("#TOAM").val("");
+        $("#OPN").val("");
+
+    }
+</script>
+
+<script>
+    function Edit(ID) {
+        //var ID = $("ID").val();
+        debugger;
+        $.ajax({
+            url: '/NMIMS/edit',
+            type: 'post',
+            dataType: 'json',
+            data: { ID: ID },
+            success: function (result) {
+                debugger;
+                var editd = JSON.parse(result);
+                $("#SN").val(editd[0].StudentName);
+                $("#RON").val(editd[0].RoomNo);
+                $("#SD").val(editd[0].SubmissionDate);
+                $('#NOC').val(editd[0].NoOfClothes);
+                $('#TOC').val(editd[0].TypeOfClothes);
+                $('#RT').val(editd[0].Rate);
+                $('#TOAM').val(editd[0].TotalAmount);
+                $('#OPN').val(editd[0].Operation);
+
+                $('#Insert').hide();
+                $('#Update').show();
+            }
+
+        })
+
+
+    }
+</script>
+
+<Script>
+    function UpdateStudents() {
+        debugger;
+        var StudentName = $("#SN").val();
+        var RoomNo = $("#RON").val();
+        var SubmissionDate = $("#SD").val();
+        var NoOfClothes = $("#NOC").val();
+        var TypeOfClothes = $("#TOC").val();
+        var Rate = $("#RT").val();
+        var TotalAmount = $("#TOAM").val();
+        var Operation = $("#OPN").val();
+
+        if (StudentName == "") {
+            alert("Please Enter Student Name");
+            return;
+        }
+        else if (RoomNo == "") {
+            alert("Please Enter Room No");
+            return;
+        }
+        else if (SubmissionDate == "") {
+            alert("Please Enter Submission Date");
+            return;
+        }
+        else if (NoOfClothes == "") {
+            alert("Please Enter No Of Clothes");
+            return;
+        }
+        else if (TypeOfClothes == "") {
+            alert("Please Enter Type Of Clothes");
+            return;
+        }
+        else if (Rate == "") {
+            alert("Please Enter Rate");
+            return;
+        }
+        else if (TotalAmount == "") {
+            alert("Please Enter Total Amount");
+            return;
+        }
+        else if (Operation == "") {
+            alert("Please Enter Operation");
+            return;
+        }
+
+
+
+        var Values =
+        {
+            StudentName: StudentName,
+            RoomNo: RoomNo,
+            SubmissionDate: SubmissionDate,
+            NoOfClothes: NoOfClothes,
+            TypeOfClothes: TypeOfClothes,
+            Rate: Rate,
+            TotalAmount: TotalAmount,
+            Operation: Operation
+        }
+
+
+        $.ajax({
+            type: "post",
+            url: "/NMIMS/UpdateStudent",
+            dataType: "json",
+            data: { model: Values },
+            success: function (result) {
+
+                if (result != "") {
+                    if (result == "Success") {
+                        alert("Data Updated Sucessfully");
+                    }
+
+                }
+                else {
+                    alert("Something went wrong Please contact administrator.")
+                }
+            }
+
+        });
+
+
+    }
+</Script>
+
+<script>
+    function del(ID) {
+        debugger;
+        $.ajax({
+            url: '/NMIMS/DeleteStudent',
+            type: 'post',
+            dataType: 'json',
+            data: { ID: ID },
+            success: function (result) {
+                if (result == "success") {
+                    debugger;
+                    alert("Data Delete Sucessfully")
+
+
+                    window.location.reload();
+
+                }
+            },
+            error: function (result) {
+                debugger;
+            }
+        })
+
+    }
+</script>
+
+@*<script>
+        function calculate() {
+            var NoOfClothes = document.getElementById('#NOC').value;
+            var Rate = document.getElementById('#RT').value;
+            var TotalAmount = document.getElementById('#TOAM');
+            var TotalAmount = NoOfClothes * Rate;
+            TotalAmount.value = TotalAmount;
+        }
+    </script>*@
+
+<script>
+    $(document).ready(function () {
+        $('#tblbody').DataTable();
+    });
+</script>
